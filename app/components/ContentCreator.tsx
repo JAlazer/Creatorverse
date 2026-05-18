@@ -1,20 +1,21 @@
+import { Edit2, ExternalLink, Info } from 'lucide-react';
+import { NavLink } from 'react-router';
+import type { Creator } from '~/types';
 
-/**
- * A content creator is someone that creates content with the following information:
- * name - name of the content creator
- * url - the url link to the creator's profile of choice
- * description - a biography of the content creator
- * imageURL - the url of the image the content creator wants displayed
- */
-interface ContentCreatorProps {
-    name: string;
-    url: string;
-    description: string;
-    imageURL: string;
-}
 
-export default function ContentCreator({name, url, description, imageURL}: ContentCreatorProps) {
+export default function ContentCreator({creatorId, name, url, description, imageURL}: Creator) {
    return (
-    <h1>Hello world!</h1>
+    // holding the border of the creator card
+    <div>
+        <div>
+            <h1>{name}</h1>
+            <div>
+                <NavLink to={`/view/${creatorId}`}> <Info /> </NavLink> 
+                <NavLink to={`/edit/${creatorId}`}> <Edit2 /> </NavLink>
+            </div>
+        </div>
+        <a href={url}><ExternalLink /></a>
+        <p>{description}</p>
+    </div>
    ) 
 }
