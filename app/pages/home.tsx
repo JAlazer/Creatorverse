@@ -4,6 +4,7 @@ import { Welcome } from "../welcome/welcome";
 import type { Creator } from "~/types";
 import { useEffect, useState } from "react";
 import TitleCard from "~/components/TitleCard";
+import ShowCreators from "../components/ShowCreators";
 
 
 export function meta({}: Route.MetaArgs) {
@@ -20,7 +21,7 @@ export default function Home() {
   /**
    * Gets the data from the creator's table in supabase and sets creators array to be as such.
    */
-  const getSupaData = async () => {
+  async function getSupaData() {
     const {data, error} = await supabase.from("creator").select('*');
     
     if (error) {
@@ -39,7 +40,11 @@ export default function Home() {
     <div>
       <TitleCard />
       <br />
-      
+      {creators ? 
+      <ShowCreators creators={creators}/>
+      :
+      <h1>No creators here yet!</h1>
+      }
     </div>
   );
 }
