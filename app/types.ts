@@ -7,9 +7,9 @@
  * imageURL - the url of the image the creator wants displayed
  */
 export interface Creator {
-    creatorId?: number;
-    name: string;
-    url: string;
-    description: string;
-    imageURL: string;
+  creatorId?: number;
+  name: string;
+  url: string;
+  description: string;
+  imageURL: string;
 }
