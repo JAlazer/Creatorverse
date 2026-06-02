@@ -42,7 +42,9 @@ GIF created with [Kap](https://getkap.co/)!
 
 ## Notes
 
-The main challenge with creating this website was ensuring that data from the Adding and Editing forms match the type definition of what I had created in the types.ts file for what a ContentCreator is represented as!
+For this prework I wanted to make use of React Router with Typescript, as Typescript allows for clear definition of what a certain component should be working with in terms of data types.
+
+The main challenge with creating this was ensuring that data from the Adding and Editing forms match the type definition of what I had created in the types.ts file for what a ContentCreator is represented as!
 
 ## License
 
